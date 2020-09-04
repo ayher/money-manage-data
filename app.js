@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3001
-let getuser= require('./componet/getuser.js')
+let user= require('./componet/user.js')
 let income = require('./componet/income.js')
 let outcome = require('./componet/outcome.js')
 let liabililies=require('./componet/liabililies.js')
@@ -19,7 +19,7 @@ app.all('*', function (req, res, next) {
 
 app.use(bodyParser())
 app.get('/', (req, res) => res.send('Hello World!'))
-app.use('/getuser', getuser)
+app.use('/user', user)
 app.use('/income', income)
 app.use('/outcome', outcome)
 app.use('/assets', assets)
